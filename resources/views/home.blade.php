@@ -9,8 +9,10 @@
                     @forelse ($comics as $comic)
                         <div class="col-3 p-4 d-flex justify-content-center m-5">
                             <div class="card">
-                                <img src="{{ $comic->thumb }}" alt="">
-                                <h5>{{ $comic->series }}</h5>
+                                <a class="text-decoration-none text-black" href="{{ route('comic.show', $comic->id) }}">
+                                    <img src="{{ $comic->thumb }}" alt="">
+                                    <h5>{{ $comic->series }}</h5>
+                                </a>
                             </div>
                         </div>
                     @empty
